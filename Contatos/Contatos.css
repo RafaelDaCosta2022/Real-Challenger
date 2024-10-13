@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Para garantir que a barra de perfil ocupe o topo */
+}
+
+.barra-perfil {
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.texto-perfil {  
+        font-size: 16px; 
+        color: #333; 
+        flex-grow: 1; 
+        text-align: left; 
+        margin-left: 20px;
+}
+
+.perfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+.perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.corpo-principal {
+    display: flex;
+    height: calc(100vh - 60px); /* Altura total menos a barra de perfil */
+}
+
+.barra-lateral {
+    background-color: #00a69c;
+    width: 15%;
+    padding: 20px;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.barra-lateral ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.barra-lateral ul li {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.barra-lateral ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.barra-lateral ul li a img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.barra-lateral ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    width: 85%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.localizacao {
+    display: flex;
+    justify-content: space-between; /* Espaçar os elementos da esquerda para a direita */
+    align-items: center; 
+    background-color: #e6fff2;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.localizacao img {
+    width: 150px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para colocar o botão no final */
+    width: 100%; /* Ocupa a largura restante */
+}
+
+.info h3 {
+    margin: 0;
+}
+
+.info p {
+    margin: 5px 0;
+}
+
+.map-btn {
+    background-color: #35da4b;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    align-self: flex-end; /* Garante que o botão vá para o final à direita */
+}
+
+.map-btn:hover {
+    background-color: #2bc63e;
+}
