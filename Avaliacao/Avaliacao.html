@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliacao</title>
+    <link rel="stylesheet" href="./Avaliacao.css">
+</head>
+
+<body>
+    <div class="barra-perfil">
+        <div class="perfil">
+            <img src=".././Images/perfil.png" alt="Perfil">
+        </div>
+        <div class="texto-perfil">
+            Aluno:Joao Vitor <br> Ra: e3000b</div>
+    </div>
+
+    <div class="corpo-principal">
+        <div class="barra-lateral">
+            <ul>
+                <li><a href="#"><img src=".././Images/phone.png" alt="Contatos"> Contatos</a></li>
+                <li><a href="#"><img src=".././Images/Boletim.png" alt="Boletim"> Boletim</a></li>
+                <li><a href="#"><img src=".././Images/layers.png" alt="Avaliação"> Avaliação</a></li>
+                <li><a href="#"><img src=".././Images/anchor.png" alt="Resultados"> Resultados</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="info">
+                <h2>Engenharia de Software - SOFTWARE QUALITY</h2>
+                <p><strong>Período:</strong> 6º</p>
+                <p class="status"><strong>Status:</strong> Recuperação</p>
+                <button class="edit-button">Editar</button>
+            </div>
+        
+            <div class="schedule">
+                <p><strong>Data:</strong> <input type="date" id="data"></p>
+                <p><strong>Horário:</strong> <input type="time" id="horario"></p>
+                
+                <div class="reminders">
+                    <label><input type="checkbox" id="lembrarEmail"> Lembrar por E-mail</label>
+                    <label><input type="checkbox" id="lembrarSms"> Lembrar por SMS</label>
+                </div>
+        
+                <button class="schedule-button">Agendar</button>
+            </div>
+        </div>
+</body>
+
+</html>
