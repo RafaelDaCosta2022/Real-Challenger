@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .barra-perfil {
@@ -16,12 +16,12 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.texto-perfil {  
-        font-size: 16px; 
-        color: #333; 
-        flex-grow: 1; 
-        text-align: left; 
-        margin-left: 20px;
+.texto-perfil {
+    font-size: 16px;
+    color: #333;
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 20px;
 }
 
 .perfil {
@@ -32,23 +32,48 @@ body {
     border: 2px solid black;
 }
 
+.sair {
+    width: 70px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    text-align: center;
+    padding: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.sair img {
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 3px;
+}
+
+
 .perfil img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+
+
 .corpo-principal {
     display: flex;
-    height: calc(100vh - 60px); /* Altura total menos a barra de perfil */
+    height: calc(100vh - 60px);
+    margin: 0;
+    padding: 0;
 }
+
 
 .barra-lateral {
     background-color: #00a69c;
-    width: 15%;
-    padding: 20px;
-    color: white;
+    width: 15%; 
     height: 100%;
+    padding: 20px 0; 
     display: flex;
     flex-direction: column;
 }
@@ -72,6 +97,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .barra-lateral ul li a img {
@@ -82,80 +108,116 @@ body {
 
 .barra-lateral ul li a:hover {
     text-decoration: underline;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container {
-    background: linear-gradient(90deg, #b2ebf2, #80deea);
-    border-radius: 10px;
-    padding: 15px;
-    width: 700px;
-    margin: 50px auto;
-    display: flex;
-    justify-content: space-between;
+
+.content {
+    width: 85%; 
+    padding: 20px;
+    overflow-y: auto;
+}
+
+
+.provas {
+    display: inline-flex;
+    justify-content: flex-start;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #e6fff2;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    gap: 20px;
+    margin-top: 10px;
+    margin-left:50%;
 }
-.info {
-    flex: 2;
-    color: black;
+
+.provas:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-.info h2 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-}
-.info p {
-    margin: 3px 0;
-    font-size: 14px;
-}
-.edit-button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 8px;
+
+.provas img {
+    width: 150px;
+    height: 100px;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
+    margin-right: 20px;
 }
-.schedule {
+
+
+.info {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.info h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.info p {
+    margin: 5px 0;
+}
+
+.btn-class {
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.agendar,
+.editar {
+    margin-left: 10px;
+    margin-right: 10px;
     flex: 1;
 }
-.schedule p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-.schedule input[type="date"],
-.schedule input[type="time"] {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 160px;
-    margin-bottom: 10px;
-}
-.reminders {
+
+.agendar {
+    width: 70px;
+    height: 30px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-.reminders label {
-    font-size: 12px;
-    margin-bottom: 5px;
-}
-.schedule-button {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    text-align: center;
+    padding: 5px;
+    background-color: #28a745;
     cursor: pointer;
-    font-size: 12px;
-    width: 100px;
 }
-.status {
-    font-size: 13px;
-    margin: 3px 0;
-    font-weight: bold;
+
+.agendar:hover {
+    background-color: #1e7e34;
+}
+
+.editar {
+    width: 70px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    text-align: center;
+    padding: 5px;
+    background-color: #fd7e14;
+    cursor: pointer;
+}
+
+.editar:hover {
+    background-color: #ff9900;
+}
+
+.agendar img,
+.editar img {
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 3px;
 }
