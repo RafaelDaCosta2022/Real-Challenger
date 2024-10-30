@@ -34,14 +34,15 @@ body {
 .sair {
     width: 70px;
     height: 30px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid black;
     text-align: center;
-    padding: 5px; 
-    background-color: #f0f0f0; 
-    cursor: pointer; 
+    padding: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    margin-right: 30px;
 }
 
  .sair img{

@@ -1,3 +1,10 @@
+html, body {
+    height: 100%;
+    overflow: hidden; /* Remove a rolagem da página */
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,6 +15,7 @@ body {
 
 .barra-perfil {
     width: 100%;
+    height: 60px; /* Altura fixa */
     background-color: #f0f0f0;
     padding: 10px 20px;
     display: flex;
@@ -43,6 +51,7 @@ body {
     padding: 5px;
     background-color: #f0f0f0;
     cursor: pointer;
+    margin-right: 30px; /* Ajuste conforme necessário */
 }
 
 .sair img {
@@ -52,22 +61,17 @@ body {
     margin-left: 3px;
 }
 
-
 .perfil img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-
-
 .corpo-principal {
     display: flex;
-    height: calc(100vh - 60px);
-    margin: 0;
-    padding: 0;
+    height: calc(100% - 60px); /* Ocupa o espaço restante abaixo da barra de perfil */
+    overflow: hidden; /* Evita a rolagem nesta área */
 }
-
 
 .barra-lateral {
     background-color: #00a69c;
@@ -76,6 +80,7 @@ body {
     padding: 20px 0; 
     display: flex;
     flex-direction: column;
+    overflow-y: auto; /* Permite rolar o conteúdo da barra lateral se necessário */
 }
 
 .barra-lateral ul {
@@ -112,13 +117,12 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-
 .content {
     width: 85%; 
+    height: 100%; /* Defina a altura como 100% */
     padding: 20px;
-    overflow-y: auto;
+    overflow-y: auto; /* Permite rolar o conteúdo do lado direito quando necessário */
 }
-
 
 .provas {
     display: inline-flex;
@@ -132,7 +136,7 @@ body {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     gap: 20px;
     margin-top: 10px;
-    margin-left:50%;
+    margin-left: 50%;
 }
 
 .provas:hover {
@@ -146,7 +150,6 @@ body {
     border-radius: 5px;
     margin-right: 20px;
 }
-
 
 .info {
     display: flex;
@@ -170,27 +173,27 @@ body {
     align-items: center;
     display: flex;
     padding: 15px;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza os botões */
+    gap: 10px; /* Espaço entre os botões */
 }
 
-.agendar,
-.editar {
-    margin-left: 10px;
-    margin-right: 10px;
-    flex: 1;
-}
-
-.agendar {
-    width: 70px;
-    height: 30px;
+.btn {
+    width: 100px; /* Define uma largura fixa para os botões */
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid black;
     text-align: center;
-    padding: 5px;
     background-color: #28a745;
+    color: white;
+    padding: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.agendar {
+    background-color: #28a745;
 }
 
 .agendar:hover {
@@ -198,16 +201,7 @@ body {
 }
 
 .editar {
-    width: 70px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black;
-    text-align: center;
-    padding: 5px;
     background-color: #fd7e14;
-    cursor: pointer;
 }
 
 .editar:hover {
@@ -216,8 +210,8 @@ body {
 
 .agendar img,
 .editar img {
-    width: 30%;
-    height: 100%;
+    width: 20px; /* Tamanho menor para o ícone */
+    height: 20px;
     object-fit: cover;
-    margin-left: 3px;
+    margin-left: 5px;
 }
