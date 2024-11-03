@@ -4,63 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avaliacao</title>
+    <title>Avaliação</title>
+    <!-- Link para o arquivo CSS para estilizar a página -->
     <link rel="stylesheet" href="./Avaliacao.css">
 </head>
 
 <body>
+    <!-- Barra de perfil do usuário -->
     <div class="barra-perfil">
         <div class="perfil">
+            <!-- Imagem do perfil do usuário -->
             <img src="../Images/perfil.png" alt="Perfil">
         </div>
-
         <div class="texto-perfil">
+            <!-- Informações do usuário (nome e RA) -->
             Aluno: Joao Vitor <br> Ra: e3000b
         </div>
-        
+        <!-- Botão de sair com ícone -->
         <button class="sair">
             Sair
             <img src="../Images/exit_2.png" alt="Sair">
         </button>
     </div>
 
+    <!-- Corpo principal da página -->
     <div class="corpo-principal">
+        
+        <!-- Barra lateral com links de navegação -->
         <div class="barra-lateral">
             <ul>
-                <li><a href="../Home/home.html"><img src="../Images/Home-PNG-Image.png" alt="Inicio"> Inicio</a></li>
+                <!-- Link para a página inicial -->
+                <li><a href="../Home/home.html"><img src="../Images/Home-PNG-Image.png" alt="Início"> Início</a></li>
+                <!-- Link para a página de contatos -->
                 <li><a href="../Contatos/Contatos.html"><img src="../Images/phone.png" alt="Contatos"> Contatos</a></li>
+                <!-- Link para a página de boletim -->
                 <li><a href="../Boletim/Boletim.html"><img src="../Images/Boletim.png" alt="Boletim"> Boletim</a></li>
+                <!-- Link para a página de avaliação -->
                 <li><a href="../Avaliacao/Avaliacao.html"><img src="../Images/layers.png" alt="Avaliação"> Avaliação</a></li>
             </ul>
         </div>
 
+        <!-- Container principal de conteúdo -->
         <div class="container">
+            
+            <!-- Primeira seção de prova -->
             <div class="provas">
-                <img src="../Images/polo-petropolis-66acf29449103 1.png" alt="Petrópolis">
+                <img src="../Images/pngtree-artificial-intelligence-robot-technology-transparent-background-png-image_9068338.png" alt="IA">
                 <div class="info">
-                    <h3>Petrópolis</h3>
+                    <h3>IA - MACHINE LEARNING - CONSTRUINDO APLICAÇÕES COM INTELIGÊNCIA ARTIFICIAL</h3>
+                    <br>
                     <div class="schedule">
+                        <!-- Input para data -->
                         <p><strong>Data:</strong> <input type="date" id="data"></p>
+                        <!-- Input para horário -->
                         <p><strong>Horário:</strong> <input type="time" id="horario"></p>
-                        
+                        <!-- Dropdown para selecionar o local -->
+                        <label for="local">Local:</label>
+                        <select id="local" class="form-select">
+                            <option value="IA">Barra Do Piraí</option>
+                            <option value="Back-End">Barra Mansa</option>
+                            <option value="Mobile">Petropolis</option>
+                            <option value="Front-End">Valença</option>
+                        </select>
+                        <!-- Opções de lembrete -->
                         <div class="reminders">
                             <label><input type="checkbox" id="lembrarEmail"> Lembrar por E-mail</label><br>
                             <label><input type="checkbox" id="lembrarSms"> Lembrar por SMS</label>
                         </div>
-                        
+                        <!-- Botões de ação (Editar e Agendar) -->
                         <div class="btn-class">
                             <button class="editar">Editar
-                                <img src="../Images/edit.png" alt="Edita">
+                                <img src="../Images/edit.png" alt="Editar">
                             </button>
                             <button class="agendar">Agendar
-                                <img src="../Images/Agenda-1024.webp" alt="Agenda">
+                                <img src="../Images/Agenda-1024.webp" alt="Agendar">
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> <!-- Fechamento da div corpo-principal -->
-    </div>
+            
+            <!-- Segunda seção de prova -->
+            <div class="provas">
+                <img src="../Images/android-desenvolvimento-curitiba-980x720-1-768x564.webp" alt="Mobile">
+                <div class="info">
+                    <h3>ANDROID DEVELOPER - CONSTRUINDO SEU 1º APP</h3>
+                    <br>
+                    <div class="schedule">
+                        <!-- Data da prova, pré-definida e somente leitura -->
+                        <label for="data">Data:</label>
+                        <input type="date" id="data" value="2024-01-01" readonly><br><br>
+                        
+                        <!-- Horário da prova, pré-definido e somente leitura -->
+                        <label for="horario">Horário:</label>
+                        <input type="time" id="horario" value="12:10" readonly> - 
+                        <input type="time" id="horario" value="13:15" readonly>
+                        
+                        <!-- Local da prova, pré-definido e somente leitura -->
+                        <label for="localApp">Local:</label>
+                        <input type="text" id="localApp" value="Barra do Piraí" readonly>
+                        
+                        <!-- Botão para verificar os resultados -->
+                        <div class="btn-class">
+                            <button class="resultados">
+                                Verificar Resultados
+                                <img src="../Images/pngtree-checklist-icon-result-report-illustrations-vector-picture-image_10829089.png" alt="Resultados">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div> <!-- Fim do container principal -->
+    </div> <!-- Fim do corpo principal -->
 
 </body>
 </html>

@@ -1,4 +1,6 @@
-html, body {
+/* Reset e configurações básicas */
+html,
+body {
     height: 100%;
     overflow: hidden; /* Remove a rolagem da página */
     margin: 0;
@@ -7,21 +9,20 @@ html, body {
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
 }
 
+/* Barra de Perfil */
 .barra-perfil {
     width: 100%;
-    height: 60px; /* Altura fixa */
+    height: 60px;
     background-color: #f0f0f0;
     padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
 .texto-perfil {
@@ -35,9 +36,15 @@ body {
 .perfil {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    border-radius: 50%; /* Circular */
     overflow: hidden;
     border: 2px solid black;
+}
+
+.perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .sair {
@@ -51,7 +58,7 @@ body {
     padding: 5px;
     background-color: #f0f0f0;
     cursor: pointer;
-    margin-right: 30px; /* Ajuste conforme necessário */
+    margin-right: 30px;
 }
 
 .sair img {
@@ -61,26 +68,22 @@ body {
     margin-left: 3px;
 }
 
-.perfil img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* Layout principal */
 .corpo-principal {
     display: flex;
-    height: calc(100% - 60px); /* Ocupa o espaço restante abaixo da barra de perfil */
-    overflow: hidden; /* Evita a rolagem nesta área */
+    height: calc(100% - 60px);
+    overflow: hidden; /* Evita rolagem */
 }
 
+/* Barra Lateral */
 .barra-lateral {
     background-color: #00a69c;
-    width: 15%; 
+    width: 15%;
     height: 100%;
-    padding: 20px 0; 
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Permite rolar o conteúdo da barra lateral se necessário */
+    overflow-y: auto; /* Rolagem lateral */
 }
 
 .barra-lateral ul {
@@ -114,34 +117,36 @@ body {
 .barra-lateral ul li a:hover {
     text-decoration: underline;
     transform: scale(1.05);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
+/* Área de Conteúdo */
 .content {
-    width: 85%; 
-    height: 100%; /* Defina a altura como 100% */
+    width: 85%;
+    height: 100%;
     padding: 20px;
-    overflow-y: auto; /* Permite rolar o conteúdo do lado direito quando necessário */
+    overflow-y: auto; 
 }
 
+/* Cartão de Prova */
 .provas {
-    display: inline-flex;
+    width: 700px;
+    display: flex;
     justify-content: flex-start;
     align-items: center;
     background-color: #e6fff2;
-    margin-bottom: 20px;
     padding: 15px;
     border-radius: 10px;
     position: relative;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     gap: 20px;
-    margin-top: 10px;
-    margin-left: 50%;
+    margin: 10px auto 20px; 
+    margin-left: 35%;
 }
 
 .provas:hover {
     transform: scale(1.05);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .provas img {
@@ -151,6 +156,7 @@ body {
     margin-right: 20px;
 }
 
+/* Informações da Prova */
 .info {
     display: flex;
     flex-direction: column;
@@ -169,35 +175,42 @@ body {
     margin: 5px 0;
 }
 
+/* Botões de Ação */
 .btn-class {
-    align-items: center;
     display: flex;
-    padding: 15px;
-    justify-content: center; /* Centraliza os botões */
-    gap: 10px; /* Espaço entre os botões */
-}
-
-.btn {
-    width: 100px; /* Define uma largura fixa para os botões */
-    height: 45px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    border: 2px solid black;
-    text-align: center;
-    background-color: #28a745;
-    color: white;
-    padding: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
 }
 
+.agendar, .resultados, .editar {
+    max-width: 160px;
+    max-height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF; 
+}
+
+/* Estilos específicos para cada botão */
 .agendar {
     background-color: #28a745;
 }
 
 .agendar:hover {
     background-color: #1e7e34;
+}
+
+.resultados {
+    background-color: #1E90FF;
+}
+
+.resultados:hover{
+    background-color: #1A78D5
 }
 
 .editar {
@@ -208,10 +221,9 @@ body {
     background-color: #ff9900;
 }
 
-.agendar img,
-.editar img {
-    width: 20px; /* Tamanho menor para o ícone */
-    height: 20px;
-    object-fit: cover;
+/* Ícones dos Botões */
+.agendar img, .resultados img, .editar img {
+    width: 20px;
+    height: 25px;
     margin-left: 5px;
 }

@@ -1,3 +1,4 @@
+/* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +7,7 @@ body {
     flex-direction: column; 
 }
 
+/* Barra de perfil (cabeçalho) */
 .barra-perfil {
     width: 100%;
     background-color: #f0f0f0;
@@ -13,17 +15,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .texto-perfil {  
-        font-size: 16px; 
-        color: #333; 
-        flex-grow: 1; 
-        text-align: left; 
-        margin-left: 20px;
+    font-size: 16px; 
+    color: #333; 
+    flex-grow: 1; 
+    text-align: left; 
+    margin-left: 20px;
 }
 
+/* Avatar do perfil */
 .perfil {
     width: 40px;
     height: 40px;
@@ -31,6 +34,14 @@ body {
     overflow: hidden;
     border: 2px solid black;
 }
+
+.perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* Botão de sair */
 .sair {
     width: 70px;
     height: 30px;
@@ -45,29 +56,20 @@ body {
     margin-right: 30px;
 }
 
- .sair img{
+.sair img {
     width: 30%;
     height: 100%;
     object-fit: cover;
     margin-left: 3px;
- }
-
-
-.perfil img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
-
-
-/* Corpo principal */
+/* Corpo principal da página */
 .corpo-principal {
     display: flex;
-    height: calc(100vh - 60px); /* Altura total menos a barra de perfil */
+    height: calc(100vh - 60px); 
 }
 
-/* Barra lateral */
+/* Barra lateral de navegação */
 .barra-lateral {
     background-color: #00a69c;
     width: 15%;
@@ -89,6 +91,7 @@ body {
     text-align: center;
 }
 
+/* Links da barra lateral */
 .barra-lateral ul li a {
     color: white;
     text-decoration: none;
@@ -97,7 +100,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animação suave */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }
 
 .barra-lateral ul li a img {
@@ -106,17 +109,18 @@ body {
     margin-bottom: 10px;
 }
 
+/* Efeito de hover para os links da barra lateral */
 .barra-lateral ul li a:hover {
     text-decoration: underline;
-    transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao hover */
+    transform: scale(1.05); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 /* Conteúdo principal */
 .content {
     width: 85%;
     padding: 20px;
-    overflow-y: auto;
+    overflow-y: auto; 
 }
 
 /* Seção de localização */
@@ -129,14 +133,15 @@ body {
     padding: 15px;
     border-radius: 10px;
     position: relative;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }
 
 .localizacao:hover {
-    transform: scale(1.05); /* Efeito de zoom suave */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao hover */
+    transform: scale(1.05); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
+/* Imagem dentro da seção de localização */
 .localizacao img {
     width: 150px;
     height: 100px;
@@ -144,12 +149,12 @@ body {
     margin-right: 20px;
 }
 
-/* Informação dentro da localização */
+/* Informação dentro da seção de localização */
 .info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%; /* Ocupa a largura restante */
+    width: 100%; 
 }
 
 .info h3 {
@@ -160,7 +165,7 @@ body {
     margin: 5px 0;
 }
 
-/* Botão do mapa */
+/* Botão de acesso ao mapa */
 .map-btn {
     background-color: #35da4b;
     color: white;
@@ -168,11 +173,11 @@ body {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    align-self: flex-end; /* Garante que o botão vá para o final à direita */
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animação suave */
+    align-self: flex-end; 
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; 
 }
 
 .map-btn:hover {
     background-color: #2bc63e;
-    transform: scale(1.05); /* Efeito de zoom no botão */
+    transform: scale(1.05); 
 }
