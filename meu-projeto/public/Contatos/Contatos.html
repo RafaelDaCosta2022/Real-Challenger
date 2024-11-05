@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locais de Atendimento</title>
+
+    <!-- CSS local para estilização -->
+    <link rel="stylesheet" href="Contatos.css">
+</head>
+
+<body>
+    <!-- Barra de perfil do usuário -->
+    <div class="barra-perfil">
+        <div class="perfil">
+            <img src="../Images/perfil.png" alt="Perfil">
+        </div>
+
+        <div class="texto-perfil">
+            Aluno: Joao Vitor <br> Ra: e3000b
+        </div>
+
+        <button class="sair">Sair <img src="../Images/exit_2.png" alt="Sair"></button>
+    </div>
+
+    <div class="corpo-principal">
+        <div class="barra-lateral">
+            <ul>
+                <li><a href="../Home/home.html"><img src="../Images/Home-PNG-Image.png" alt="Início">Início</a></li>
+                <li><a href="../Contatos/Contatos.html"><img src="../Images/phone.png" alt="Contatos">Contatos</a></li>
+                <li><a href="../Boletim/Boletim.html"><img src="../Images/Boletim.png" alt="Boletim">Boletim</a></li>
+                <li><a href="../Avaliacao/Avaliacao.html"><img src="../Images/layers.png" alt="Avaliação">Avaliação</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <!-- Formulário de Contato -->
+            <h2>Enviar Contato</h2>
+            <form id="contactForm" action="/contatos" method="POST">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="text" name="endereco" placeholder="Endereço" required>
+                <input type="text" name="telefone" placeholder="Telefone" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="text" name="localizacao" placeholder="Localização" required>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <div id="responseMessage"></div>
+
+            <!-- As localizações já existentes -->
+            <div class="localizacao">
+                <img src="../Images/polo-barra-do-pirai-66acf2719bfdd 1.png" alt="Barra do Piraí">
+                <div class="info">
+                    <h3>Barra Do Piraí</h3>
+                    <p><strong>Endereço:</strong> Rua Joaquim de Carvalho, nº 18, 2º andar - Edifício Vitória Régia. Barra do Piraí - RJ</p>
+                    <p><strong>Telefone:</strong> (24) 99275-0081</p>
+                    <p><strong>E-mail:</strong> polobarradopirai@faa.edu.br</p>
+                    <a href="https://www.google.com/maps/..." class="map-btn">Ver Mapa</a>
+                </div>
+            </div>
+
+            <!-- Adicione outras localizações conforme necessário -->
+        </div> <!-- Fim do conteúdo principal -->
+    </div> <!-- Fim do corpo principal -->
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            fetch('/contatos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.text())
+            .then(message => {
+                document.getElementById('responseMessage').innerText = message;
+                this.reset(); // Limpa o formulário após o envio
+            })
+            .catch(error => {
+                document.getElementById('responseMessage').innerText = 'Erro ao enviar: ' + error;
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação</title>
+    <link rel="stylesheet" href="Avaliacao.css">
+</head>
+
+<body>
+    <div class="barra-perfil">
+        <div class="perfil">
+            <img src="../images/perfil.png" alt="Perfil do Aluno">
+        </div>
+        <div class="texto-perfil">
+            Aluno: Joao Vitor <br> RA: e3000b
+        </div>
+        <button class="sair">
+            Sair
+            <img src="../images/exit_2.png" alt="Sair">
+        </button>
+    </div>
+
+    <div class="corpo-principal">
+        <div class="barra-lateral">
+            <ul>
+                <li><a href="../Home/home.html"><img src="../images/Home-PNG-Image.png" alt="Início"> Início</a></li>
+                <li><a href="../Contatos/Contatos.html"><img src="../images/phone.png" alt="Contatos"> Contatos</a></li>
+                <li><a href="../Boletim/Boletim.html"><img src="../images/Boletim.png" alt="Boletim"> Boletim</a></li>
+                <li><a href="../Avaliacao/Avaliacao.html"><img src="../images/layers.png" alt="Avaliação"> Avaliação</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <!-- Primeira Avaliação -->
+            <div class="provas">
+                <img src="../images/pngtree-artificial-intelligence-robot-technology-transparent-background-png-image_9068338.png" alt="Imagem IA">
+                <div class="info">
+                    <h3>IA - MACHINE LEARNING - CONSTRUINDO APLICAÇÕES COM INTELIGÊNCIA ARTIFICIAL</h3>
+                    <br>
+                    <form id="formAvaliacao">
+                        <div class="schedule">
+                            <label for="dataIA"><strong>Data:</strong></label>
+                            <input type="date" id="dataIA" name="dataIA"><br>
+
+                            <label for="horarioIA"><strong>Horário:</strong></label>
+                            <input type="time" id="horarioIA" name="horarioIA"><br>
+
+                            <label for="localIA">Local:</label>
+                            <select id="localIA" name="localIA" class="form-select">
+                                <option value="barra-pirai">Barra Do Piraí</option>
+                                <option value="barra-mansa">Barra Mansa</option>
+                                <option value="petropolis">Petrópolis</option>
+                                <option value="valenca">Valença</option>
+                            </select>
+
+                            <div class="reminders">
+                                <label><input type="checkbox" id="lembrarEmail" name="lembrarEmail"> Lembrar por E-mail</label><br>
+                                <label><input type="checkbox" id="lembrarSms" name="lembrarSms"> Lembrar por SMS</label>
+                            </div>
+
+                            <div class="btn-class">
+                                <button type="button" class="editar">Editar
+                                    <img src="../images/edit.png" alt="Editar">
+                                </button>
+                                <button type="submit" class="agendar">Agendar
+                                    <img src="../images/Agenda-1024.webp" alt="Agendar">
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Segunda Avaliação -->
+            <div class="provas">
+                <img src="../images/android-desenvolvimento-curitiba-980x720-1-768x564.webp" alt="Imagem Mobile">
+                <div class="info">
+                    <h3>ANDROID DEVELOPER - CONSTRUINDO SEU 1º APP</h3>
+                    <br>
+                    <div class="schedule">
+                        <label for="dataAndroid">Data:</label>
+                        <input type="date" id="dataAndroid" value="2024-01-01" readonly><br>
+
+                        <label for="horarioInicioAndroid">Horário:</label>
+                        <input type="time" id="horarioInicioAndroid" value="12:10" readonly> - 
+                        <input type="time" id="horarioFimAndroid" value="13:15" readonly><br>
+
+                        <label for="localAndroid">Local:</label>
+                        <input type="text" id="localAndroid" value="Barra do Piraí" readonly>
+
+                        <div class="btn-class">
+                            <button type="button" class="resultados">
+                                Verificar Resultados
+                                <img src="../images/pngtree-checklist-icon-result-report-illustrations-vector-picture-image_10829089.png" alt="Resultados">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- Fim do container principal -->
+    </div> <!-- Fim do corpo principal -->
+</body>
+
+</html>
