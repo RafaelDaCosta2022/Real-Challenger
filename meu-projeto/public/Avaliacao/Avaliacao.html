@@ -1,13 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliação</title>
     <link rel="stylesheet" href="Avaliacao.css">
 </head>
-
 <body>
     <div class="barra-perfil">
         <div class="perfil">
@@ -39,16 +38,19 @@
                 <div class="info">
                     <h3>IA - MACHINE LEARNING - CONSTRUINDO APLICAÇÕES COM INTELIGÊNCIA ARTIFICIAL</h3>
                     <br>
-                    <form id="formAvaliacao">
+                    <form id="formAvaliacao" action="http://localhost:3000/agendar" method="POST">
                         <div class="schedule">
+                            <label for="tituloIA"><strong>Título:</strong></label>
+                            <input type="text" id="tituloIA" name="titulo" value="IA - Machine Learning" readonly><br>
+
                             <label for="dataIA"><strong>Data:</strong></label>
-                            <input type="date" id="dataIA" name="dataIA"><br>
+                            <input type="date" id="dataIA" name="data" required><br>
 
                             <label for="horarioIA"><strong>Horário:</strong></label>
-                            <input type="time" id="horarioIA" name="horarioIA"><br>
+                            <input type="time" id="horarioIA" name="horario" required><br>
 
-                            <label for="localIA">Local:</label>
-                            <select id="localIA" name="localIA" class="form-select">
+                            <label for="localIA"><strong>Local:</strong></label>
+                            <select id="localIA" name="local" class="form-select" required>
                                 <option value="barra-pirai">Barra Do Piraí</option>
                                 <option value="barra-mansa">Barra Mansa</option>
                                 <option value="petropolis">Petrópolis</option>
@@ -102,5 +104,4 @@
         </div> <!-- Fim do container principal -->
     </div> <!-- Fim do corpo principal -->
 </body>
-
 </html>

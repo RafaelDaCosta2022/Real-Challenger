@@ -1,53 +1,75 @@
 const express = require('express');
 const mysql = require('mysql2');
+const bodyParser = require('body-parser');
+
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.use(express.json());
-
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'rafa',
-    database: 'Unifaa'
+const db = mysql.createConnection({
+    host: 'localhost',     // substitua pelo host do seu banco, se diferente
+    user: 'root',          // substitua pelo seu nome de usuário do banco de dados
+    password: 'rafa',      // substitua pela senha do banco de dados
+    database: 'Unifaa'     // certifique-se de que o nome do banco está correto
 });
 
-connection.connect((err) => {
+// Conectar ao banco de dados
+db.connect((err) => {
     if (err) {
         console.error('Erro ao conectar ao banco de dados:', err);
         return;
     }
-    console.log('Conectado ao banco de dados!');
+    console.log('Conexão com o banco de dados estabelecida com sucesso');
 });
 
-app.post('/api/reminder', (req, res) => {
-    const { date, time, message, smsReminder } = req.body;
+// Rota para receber dados do formulário
+app.post('/agendar', (req, res) => {
+    let { titulo, data, horario, local, lembrarEmail, lembrarSms } = req.body;
 
-    const query = `INSERT INTO reminders (date, time, message, smsReminder) VALUES (?, ?, ?, ?)`;
-    connection.query(query, [date, time, message, smsReminder], (error, results) => {
-        if (error) {
-            console.error('Erro ao inserir dados:', error);
-            res.status(500).json({ message: 'Erro ao salvar o lembrete' });
+    // Verificar se os checkboxes foram marcados, senão defina como 0
+    lembrarEmail = lembrarEmail ? 1 : 0;
+    lembrarSms = lembrarSms ? 1 : 0;
+
+    const sql = 'INSERT INTO agendamentos (titulo, data, horario, local, lembrarEmail, lembrarSms) VALUES (?, ?, ?, ?, ?, ?)';
+    db.query(sql, [titulo, data, horario, local, lembrarEmail, lembrarSms], (err, result) => {
+        if (err) {
+            console.error('Erro ao inserir dados no banco:', err); // Log detalhado
+            res.status(500).send('Erro ao agendar a avaliação');
             return;
         }
-        res.status(200).json({ message: 'Lembrete salvo com sucesso!' });
+        // Retorne os dados enviados de volta para o cliente
+        res.json({ titulo, data, horario, local, lembrarEmail, lembrarSms });
     });
 });
 
-app.listen(3001, () => {
-    console.log('Servidor rodando em http://localhost:3001');
-});
-
-// Rota para buscar todas as avaliações
+// Rota para obter todas as avaliações
 app.get('/avaliacoes', (req, res) => {
-    const sql = 'SELECT * FROM avaliacao';
- 
-    db.query(sql, (err, results) => {
+    const sqlQuery = 'SELECT * FROM agendamentos'; // Substitua pelo nome correto da sua tabela
+    db.query(sqlQuery, (err, results) => {
         if (err) {
-            console.error('Erro ao buscar dados na tabela `avaliacao`:', err);
-            res.status(500).json({ error: 'Erro ao buscar dados' });
+            console.error('Erro ao buscar avaliações:', err);
+            res.status(500).send('Erro ao buscar avaliações');
         } else {
-            res.status(200).json(results);
+            res.json(results); // Retorna as avaliações em formato JSON
         }
     });
- });
- 
+});
+
+// Iniciar o servidor
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
+
+// Função para carregar avaliações do backend
+function carregarAvaliacoes() {
+    fetch('http://localhost:3000/avaliacoes') // Endpoint para pegar as avaliações
+        .then(response => response.json()) // Converte a resposta em JSON
+        .then(data => {
+            console.log(data); // Verifique se está carregando as avaliações
+            exibirAvaliacoes(data); // Chama função para exibir as avaliações
+        })
+        .catch(error => {
+            console.error('Erro ao carregar avaliações:', error);
+        });
+}
