@@ -42,7 +42,9 @@ body {
     padding: 5px; 
     background-color: #f0f0f0; 
     cursor: pointer; 
+    margin-right: 2cm; 
 }
+
 
  .sair img{
     width: 30%;

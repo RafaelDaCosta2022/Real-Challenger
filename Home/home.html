@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portal do Aluno</title>
     <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
-   
+
     <div class="barra-perfil">
         <div class="perfil">
-            <img src=".././Images/perfil.png" alt="Perfil">
+            <img src="/Images/perfil.png" alt="Perfil do Aluno">
         </div>
-
         <div class="texto-perfil">
-            Aluno:Joao Vitor <br> Ra: e3000b
+            Aluno: Joao Vitor <br> RA: e3000b
         </div>
-        
-        <button class="sair">Sair
- <img src="../Images/exit_2.png" alt="Sair">
-       </button>
-
+        <div class="logout-container">
+            <button id="logoutButton" class="sair" title="Sair">
+                Sair
+                <img src="../images/exit_2.png" alt="Sair">
+            </button>
+        </div>
     </div>
 
     <div class="CorpoPrincipal">
@@ -30,27 +30,28 @@
         <div class="CaixaBalaoes">
             <a class="Botao" href="../Avaliacao/Avaliacao.html">
                 <h2>Avaliação</h2>
-                <h3>Local disponibilizado para que voce possa agendar sua Avaliacao<br>
-                e verificar seus acertos e erros nas questos</h3>
+                <h3>Local disponibilizado para que você possa agendar sua Avaliação<br>
+                    e verificar seus acertos e erros nas questões</h3>
                 <img src="../Images/layers.png" alt="Ícone de Avaliação">
             </a>
 
             <a class="Botao" href="../Contatos/Contatos.html">
                 <h2>Contatos</h2>
-                <h3>Local onde voce consegue encontrar a localizacao, contatos<br>
-                e outros dados importantes sobre nossos polos</h3>
+                <h3>Local onde você consegue encontrar a localização, contatos<br>
+                    e outros dados importantes sobre nossos polos</h3>
                 <img src="../Images/phone.png" alt="Ícone de Contato">
             </a>
 
             <a class="Botao" href="../Boletim/Boletim.html">
                 <h2>Boletim</h2>
-                <h3>Local onde voce consegue encontrar seu boletim, notas e outros dados<br>
-                importantes sobre sua evolução academica</h3>
+                <h3>Local onde você consegue encontrar seu boletim, notas e outros dados<br>
+                    importantes sobre sua evolução acadêmica</h3>
                 <img src="../Images/Boletim.png" alt="Ícone de Boletim">
             </a>
-
         </div>
     </div>
+    <script src="./logout.js"></script>
 
 </body>
+
 </html>

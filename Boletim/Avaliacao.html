@@ -14,10 +14,13 @@
         <div class="texto-perfil">
             Aluno: Joao Vitor <br> RA: e3000b
         </div>
-        <button id="logoutButton" class="sair" title="Sair">
-            Sair
-            <img src="../images/exit_2.png" alt="Sair">
-        </button>
+        <div class="barra-perfil">
+            <button id="logoutButton" class="sair" title="Sair">
+                Sair
+                <img src="../images/exit_2.png" alt="Sair">
+            </button>
+    </div>
+        
     </div>
 
     <div class="corpo-principal">
@@ -31,10 +34,12 @@
         </div>
 
         <div class="main-container">
+            <!-- Primeira Avaliação (Formulário de Agendamento) -->
             <div class="provas">
                 <img src="/Images/pngtree-artificial-intelligence-robot-technology-transparent-background-png-image_9068338.png" alt="Imagem IA">
                 <div class="info">
                     <h3>IA - MACHINE LEARNING - CONSTRUINDO APLICAÇÕES COM INTELIGÊNCIA ARTIFICIAL</h3>
+                    <br>
                     <form id="formAvaliacao">
                         <div class="schedule">
                             <label for="tituloIA"><strong>Título:</strong></label>
@@ -74,37 +79,36 @@
                 <div class="modal-content">
                     <span class="close" onclick="closeModal()">&times;</span>
                     <h2>Editar Agendamento</h2>
-                    <form id="editForm">
+                    <form>
                         <label for="editTitulo">Título:</label>
                         <input type="text" id="editTitulo" name="titulo" required><br>
-
+            
                         <label for="editData">Data:</label>
                         <input type="date" id="editData" name="data" required><br>
-
+            
                         <label for="editHorario">Horário:</label>
                         <input type="time" id="editHorario" name="horario" required><br>
-
+            
                         <label for="editLocal">Local:</label>
-                        <select id="editLocal" name="local" required>
-                            <option value="barra-pirai">Barra Do Piraí</option>
-                            <option value="barra-mansa">Barra Mansa</option>
-                            <option value="petropolis">Petrópolis</option>
-                            <option value="valenca">Valença</option>
-                        </select>
-
+                        <input type="text" id="editLocal" name="local" required><br>
+            
                         <button type="button" onclick="saveEdits()">Salvar</button>
                     </form>
                 </div>
             </div>
+            
+            
 
+            <!-- Lista de Agendamentos Carregados do Banco de Dados -->
             <div class="agendamentos-container">
                 <h3>Agendamentos</h3>
-                <div id="agendamentos-list"></div>
+                <div id="agendamentos-list"></div> <!-- Aqui serão exibidos os agendamentos com os botões -->
             </div>
-        </div>
-    </div>
+        </div> <!-- Fim do main-container -->
+    </div> <!-- Fim do corpo principal -->
+    <script src="./logout.js"></script>
 
     <script src="agendamento.js"></script>
-    <script src="logout.js"></script>
 </body>
+
 </html>

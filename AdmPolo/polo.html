@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./polo.css">
+    <title>Painel de Administração - UNIFAA</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra de perfil do usuário -->
+        <div class="barra-perfil">
+            <div class="perfil">
+                <!-- Imagem do perfil do usuário -->
+                <img src="../Images/perfil.png" alt="Perfil">
+            </div>
+            <div class="texto-perfil">
+                <!-- Informações do usuário -->
+                Aluno: Joao Vitor <br> Ra: e3000b
+            </div>
+            <!-- Botão de sair com ícone -->
+            <div class="barra-perfil">
+                <button id="logoutButton" class="sair" title="Sair">
+                    Sair
+                    <img src="../images/exit_2.png" alt="Sair">
+                </button>
+        </div>
+            
+        </div>
+
+        <!-- Cabeçalho da página -->
+        <header>
+            <h1>Painel de Administração - UNIFAA</h1>
+        </header>
+
+        <!-- Seção principal da página -->
+        <main>
+            <form id="adminForm">
+                <fieldset>
+                    <legend><b>Alterar Local e Horário da Prova</b></legend>
+                    
+                    <!-- Grupo para ID do Aluno -->
+                    <div class="inputGroup">
+                        <label for="alunoID">ID do Aluno:</label>
+                        <input type="text" id="alunoID" name="alunoID" required>
+                        <button type="button" id="buscar">Buscar</button>
+                    </div>
+
+                    <!-- Grupo para Local da Prova -->
+                    <div class="inputGroup">
+                        <label for="local">Local da Prova:</label>
+                        <select id="local" class="form-select">
+                            <option value="IA">Barra Do Piraí</option>
+                            <option value="Back-End">Barra Mansa</option>
+                            <option value="Mobile">Petropolis</option>
+                            <option value="Front-End">Valença</option>
+                        </select>
+                    </div>
+
+                    <!-- Grupo para Data da Prova -->
+                    <div class="inputGroup">
+                        <label for="data">Data da Prova:</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+
+                    <!-- Grupo para Horário da Prova -->
+                    <div class="inputGroup">
+                        <label for="hora">Horário da Prova:</label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+
+                    <!-- Botão para salvar alterações -->
+                    <button type="submit" id="submit">Salvar Alterações</button>
+                </fieldset>
+            </form>
+        </main>
+
+        <!-- Rodapé da página -->
+        <footer>
+            <p>&copy; 2024 UNIFAA. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <script src="./logout.js"></script>
+</body>
+</html>

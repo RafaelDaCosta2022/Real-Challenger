@@ -51,7 +51,9 @@ body {
     padding: 5px; 
     background-color: #f0f0f0; 
     cursor: pointer; 
+    margin-right: 2cm; /* Move o botão 5 cm para a esquerda */
 }
+
 
  .sair img{
     width: 30%;
@@ -122,3 +124,6 @@ a:hover {
     color: #111;
     text-decoration: none;
 }
+
+
+
