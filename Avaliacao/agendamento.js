@@ -150,3 +150,19 @@ window.onclick = function(event) {
 document.addEventListener("DOMContentLoaded", () => {
     fetchAgendamentos();
 });
+
+document.getElementById('logoutButton').addEventListener('click', async () => {
+    try {
+        const response = await fetch('http://localhost:3000/logout', {
+            method: 'POST',
+            credentials: 'include'
+        });
+        if (response.ok) {
+            window.location.href = '/login'; // Redireciona para a página de login
+        } else {
+            console.error('Erro ao fazer logout');
+        }
+    } catch (error) {
+        console.error('Erro de rede ao tentar fazer logout:', error);
+    }
+});

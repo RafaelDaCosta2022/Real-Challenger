@@ -22,6 +22,17 @@ app.use(session({
     cookie: { secure: false } // Altere para true se estiver usando HTTPS
 }));
 
+// Endpoint de logout
+app.post('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.status(500).json({ error: 'Erro ao tentar fazer logout' });
+        }
+        res.clearCookie('connect.sid'); // Limpa o cookie de sessão
+        res.status(200).json({ message: 'Logout realizado com sucesso' });
+    });
+});
+
 // Aplica as rotas definidas no routes.js
 app.use(routes);
 
