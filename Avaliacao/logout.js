@@ -1,6 +1,6 @@
 // Função para realizar o logout
 function logout() {
-    fetch('http://localhost:3000/logout', {
+    fetch('http://localhost:3001/logout', {
         method: 'POST',
         credentials: 'include' // Inclui cookies para manter a sessão
     })
@@ -9,9 +9,7 @@ function logout() {
             // Redireciona para a página de login após o logout
             window.location.href = '/Login/login.html';
         } else {
-            return response.json().then(data => {
-                console.error('Erro ao tentar fazer logout:', data.message || 'Erro desconhecido');
-            });
+            console.error('Erro ao tentar fazer logout');
         }
     })
     .catch(error => {
@@ -19,15 +17,20 @@ function logout() {
     });
 }
 
-// Adiciona o evento de clique ao botão de logout quando o DOM estiver carregado
+document.getElementById('logoutButton').addEventListener('click', () => {
+  // Encerra a sessão (se aplicável) e redireciona
+  fetch('http://localhost:3001/logout', { method: 'POST' })
+    .then(() => {
+      window.location.href = '/login/login.html';
+    })
+    .catch(error => console.error('Erro ao fazer logout:', error));
+});
+
+
+// Detecta o botão de logout e adiciona o evento de clique
 document.addEventListener("DOMContentLoaded", () => {
     const logoutButton = document.getElementById('logoutButton');
     if (logoutButton) {
-        logoutButton.addEventListener('click', (event) => {
-            event.preventDefault(); // Previne o comportamento padrão do botão
-            logout();
-        });
-    } else {
-        console.warn('Botão de logout não encontrado na página.');
+        logoutButton.addEventListener('click', logout);
     }
 });

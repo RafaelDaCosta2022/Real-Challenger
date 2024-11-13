@@ -1,39 +1,36 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const bcrypt = require('bcrypt');
 const session = require('express-session');
-const routes = require('./routes'); // Importa o roteador configurado
+const routes = require('./routes'); // Certifique-se de que o caminho está correto
 
-const app = express(); // Define a instância do Express
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-// Configuração do CORS com credenciais permitidas para localhost:5500
+// Middleware para interpretar JSON
+app.use(express.json());
+
+// Configuração de CORS
 app.use(cors({
     origin: 'http://127.0.0.1:5500',
-    credentials: true
+    credentials: true,
 }));
-
-app.use(express.json());
 
 // Configuração de sessão
 app.use(session({
-    secret: 'seu_segredo_seguro', // Use um segredo forte aqui
+    secret: 'seu_segredo_seguro',
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false } // Altere para true se estiver usando HTTPS
+    saveUninitialized: false,
+    cookie: {
+        secure: false,
+        httpOnly: true,
+        sameSite: 'lax',
+        maxAge: 24 * 60 * 60 * 1000,
+    }
 }));
 
-// Endpoint de logout
-app.post('/logout', (req, res) => {
-    req.session.destroy(err => {
-        if (err) {
-            return res.status(500).json({ error: 'Erro ao tentar fazer logout' });
-        }
-        res.clearCookie('connect.sid'); // Limpa o cookie de sessão
-        res.status(200).json({ message: 'Logout realizado com sucesso' });
-    });
-});
-
-// Aplica as rotas definidas no routes.js
+// Usa o roteador configurado em `routes.js`
 app.use(routes);
 
 // Servir arquivos estáticos
@@ -43,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'Avaliacao')));
 app.use(express.static(path.join(__dirname, 'Contatos')));
 app.use(express.static(path.join(__dirname, 'Boletim')));
 
-// Iniciar o servidor
-app.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000.');
+// Inicia o servidor
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
 });

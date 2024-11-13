@@ -15,6 +15,12 @@
                 <br>
 
                 <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required autocomplete="off">
+                    <label for="nome" class="labelInput">Nome</label>
+                </div>
+                <br><br>
+
+                <div class="inputBox">
                     <input type="email" name="email" id="email" class="inputUser" required autocomplete="off">
                     <label for="email" class="labelInput">Email</label>
                 </div>
@@ -24,7 +30,7 @@
                     <input type="password" name="senha" id="senha" class="inputUser" required autocomplete="off">
                     <label for="senha" class="labelInput">Senha</label>
                 </div>
-                <br><br>
+                <br><br>                
 
                 <div class="inputBox">
                     <input type="password" name="confirmSenha" id="confirmSenha" class="inputUser" required autocomplete="off">
@@ -32,7 +38,31 @@
                 </div>
                 <br><br>
 
-                <input type="submit" value="Cadastrar" id="submit">
+                <div class="inputBox">
+                    <input type="text" name="ra" id="ra" class="inputUser" required autocomplete="off">
+                    <label for="ra" class="labelInput">RA</label>
+                </div>
+                <br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="telefone" id="telefone" class="inputUser" autocomplete="off">
+                    <label for="telefone" class="labelInput">Telefone</label>
+                </div>
+                <br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" autocomplete="off">
+                    <label for="endereco" class="labelInput">Endereço</label>
+                </div>
+                <br><br>
+
+                <div class="inputBox">
+                    <input type="date" name="dataNascimento" id="dataNascimento" class="inputUser" autocomplete="off">
+                    <label for="dataNascimento" class="labelInput">Data de Nascimento</label>
+                </div>
+                <br><br>
+
+                <input type="submit" value="Cadastrar">
                 <p id="errorMessage" style="color: red; display: none;">As senhas não coincidem.</p>
             </fieldset>
         </form>

@@ -1,8 +1,6 @@
-// logout.js
-
 // Função para realizar o logout
 function logout() {
-    fetch('http://localhost:3000/logout', {
+    fetch('http://localhost:3001/logout', {
         method: 'POST',
         credentials: 'include' // Inclui cookies para manter a sessão
     })
@@ -19,6 +17,16 @@ function logout() {
     });
 }
 
+document.getElementById('logoutButton').addEventListener('click', () => {
+  // Encerra a sessão (se aplicável) e redireciona
+  fetch('http://localhost:3001/logout', { method: 'POST' })
+    .then(() => {
+      window.location.href = '/login/login.html';
+    })
+    .catch(error => console.error('Erro ao fazer logout:', error));
+});
+
+
 // Detecta o botão de logout e adiciona o evento de clique
 document.addEventListener("DOMContentLoaded", () => {
     const logoutButton = document.getElementById('logoutButton');
@@ -26,4 +34,3 @@ document.addEventListener("DOMContentLoaded", () => {
         logoutButton.addEventListener('click', logout);
     }
 });
-
